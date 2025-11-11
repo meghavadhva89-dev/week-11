@@ -13,6 +13,9 @@ DIAMONDS_NUMERIC = _diamonds.select_dtypes(include=[np.number]).copy()
 step_count: int = 0
 
 
+# -------------------------------------------------------------------
+# Exercise 1: kmeans
+# -------------------------------------------------------------------
 def kmeans(X: Any, k: int, random_state: Optional[int] = 0
            ) -> Tuple[np.ndarray, np.ndarray]:
     """
@@ -36,6 +39,9 @@ def kmeans(X: Any, k: int, random_state: Optional[int] = 0
     return km.cluster_centers_, km.labels_
 
 
+# -------------------------------------------------------------------
+# Exercise 2: kmeans_diamonds
+# -------------------------------------------------------------------
 def kmeans_diamonds(n: int, k: int,
                     random_state: Optional[int] = 0
                     ) -> Tuple[np.ndarray, np.ndarray]:
@@ -52,6 +58,9 @@ def kmeans_diamonds(n: int, k: int,
     return kmeans(X, k, random_state=random_state)
 
 
+# -------------------------------------------------------------------
+# Exercise 3: kmeans_timer
+# -------------------------------------------------------------------
 def kmeans_timer(n: int, k: int, n_iter: int = 5,
                  random_state: Optional[int] = 0) -> float:
     """
@@ -66,6 +75,9 @@ def kmeans_timer(n: int, k: int, n_iter: int = 5,
     return float(np.mean(timings))
 
 
+# -------------------------------------------------------------------
+# Bonus: binary search with step counting
+# -------------------------------------------------------------------
 def bin_search_count(n: int) -> Tuple[int, int]:
     """
     Binary search for value (n-1) in an array of size n while
